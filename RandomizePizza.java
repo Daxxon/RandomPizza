@@ -7,8 +7,8 @@ public class RandomizePizza{
     Pizza myPizza = new Pizza();
     myPizza.chooseCrust();
     myPizza.chooseSauce();
-//    chooseMeats();
-//    chooseVeggies();
+//    myPizza.chooseMeats();
+//    myPizza.chooseVeggies();
 
   }
 }
@@ -17,8 +17,8 @@ class Pizza {
 
   String[] crustChoices = {"originalPan", "handTossed", "thin", "stuffed"};
   String[] sauceChoices= {"marinara", "crushedTomato", "garlicParmesan", "barbeque", "buffalo"};
-  String[] meatChoices = { "pepperoni", "italianSausage", "salami", "meatball", "ham", "bacon", "chicken", "beef", "pork"};
-  String[] veggieChoices = { "mushrooms", "spinach", "peruvianPeppers", "redOnions", "olives", "bellPeppers", "bananaPeppers", "pineapple", "jalapenoPeppers", "romaTomatoes"};
+  String[] meatChoices = {"pepperoni", "italianSausage", "salami", "meatball", "ham", "bacon", "chicken", "beef", "pork"};
+  String[] veggieChoices = {"mushrooms", "spinach", "peruvianPeppers", "redOnions", "olives", "bellPeppers", "bananaPeppers", "pineapple", "jalapenoPeppers", "romaTomatoes"};
 
   String crust;
   String sauce;
