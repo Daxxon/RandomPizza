@@ -4,10 +4,9 @@ import java.io.*;
 public class RandomizePizza{
 
   public static void main(String args[]){
-    Random randomGenerator = new Random();
     Pizza myPizza = new Pizza();
-    chooseCrust();
-    chooseSauce();
+    myPizza.chooseCrust();
+    myPizza.chooseSauce();
 //    chooseMeats();
 //    chooseVeggies();
 
@@ -16,36 +15,37 @@ public class RandomizePizza{
 
 class Pizza {
 
-  enum crustChoices {originalPan, handTossed, thin, stuffed};
-  crustChoices crusts;
+  String[] crustChoices = {"originalPan", "handTossed", "thin", "stuffed"};
+  String[] sauceChoices= {"marinara", "crushedTomato", "garlicParmesan", "barbeque", "buffalo"};
+  String[] meatChoices = { "pepperoni", "italianSausage", "salami", "meatball", "ham", "bacon", "chicken", "beef", "pork"};
+  String[] veggieChoices = { "mushrooms", "spinach", "peruvianPeppers", "redOnions", "olives", "bellPeppers", "bananaPeppers", "pineapple", "jalapenoPeppers", "romaTomatoes"};
 
-  enum sauceChoices {marinara, crushedTomato, garlicParmesan, barbeque, buffalo};
-  sauceChoices sauces;
+  String crust;
+  String sauce;
+  String[] meats;
+  String[] veggies;
 
-  String[] crust;
-  String[] sauce;
 
-//  String[] meats = { pepperoni, italianSausage, salami, meatball, ham, bacon, chicken, beef, pork };
-//  String[] veggies = { mushrooms, spinach, peruvianPeppers, redOnions, olives, bellPeppers, bananaPeppers, pineapple, jalapenoPeppers, romaTomatoes };
+public void chooseCrust(){
+  Random randomGenerator = new Random();
+  this.crust = crustChoices[randomGenerator.nextInt(3) + 1];
+  System.out.println("Your crust is " + this.crust);
+
 }
-
-void chooseCrust(){
-  myPizza.crust = crusts[randomGenerator.nextInt(3) + 1];
-  System.out.println("Your crust is " + myPizza.crust);
-
-}
-void chooseSauce(){
-  myPizza.sauce = sauces[randomGenerator.nextInt(4) + 1];
-  System.out.println("Your sauce is " + myPizza.sauce);
+public void chooseSauce(){
+  Random randomGenerator = new Random();
+  this.sauce = sauceChoices[randomGenerator.nextInt(4) + 1];
+  System.out.println("Your sauce is " + this.sauce);
 }
 /*  String chooseMeats(){
+    Random randomGenerator = new Random();
     numberOfMeats = new int[randomGenerator.nextInt(8) + 1];
     for (i=0; i<= numberOfMeats; i++){
       myPizza.meats =
     }
   }
   String chooseVeggies(){
-
+    Random randomGenerator = new Random();
   }
 */
-
+}
