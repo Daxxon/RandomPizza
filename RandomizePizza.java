@@ -28,13 +28,13 @@ class Pizza {
 
 public void chooseCrust(){
   Random randomGenerator = new Random();
-  this.crust = crustChoices[randomGenerator.nextInt(3) + 1];
+  this.crust = crustChoices[randomGenerator.nextInt(crustChoices.length)];
   System.out.println("Your crust is " + this.crust);
 
 }
 public void chooseSauce(){
   Random randomGenerator = new Random();
-  this.sauce = sauceChoices[randomGenerator.nextInt(4) + 1];
+  this.sauce = sauceChoices[randomGenerator.nextInt(sauceChoices.length)];
   System.out.println("Your sauce is " + this.sauce);
 }
 /*  String chooseMeats(){
