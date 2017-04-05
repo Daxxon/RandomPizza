@@ -7,13 +7,15 @@ public class RandomizePizza{
     Pizza myPizza = new Pizza();
     myPizza.chooseCrust();
     myPizza.chooseSauce();
-//    myPizza.chooseMeats();
-//    myPizza.chooseVeggies();
+    myPizza.chooseMeats();
+    myPizza.chooseVeggies();
 
   }
 }
 
+
 class Pizza {
+  Random randomGenerator = new Random();
 
   String[] crustChoices = {"originalPan", "handTossed", "thin", "stuffed"};
   String[] sauceChoices= {"marinara", "crushedTomato", "garlicParmesan", "barbeque", "buffalo"};
@@ -22,30 +24,42 @@ class Pizza {
 
   String crust;
   String sauce;
-  String[] meats;
-  String[] veggies;
+  String[] meats = new String[(randomGenerator.nextInt(3) +1)];
+  String[] veggies = new String[(randomGenerator.nextInt(3) + 1)];
 
+  public void chooseCrust(){
+    this.crust = crustChoices[randomGenerator.nextInt(crustChoices.length)];
+    System.out.println("Your crust is " + this.crust);
 
-public void chooseCrust(){
-  Random randomGenerator = new Random();
-  this.crust = crustChoices[randomGenerator.nextInt(crustChoices.length)];
-  System.out.println("Your crust is " + this.crust);
+  }
 
-}
-public void chooseSauce(){
-  Random randomGenerator = new Random();
-  this.sauce = sauceChoices[randomGenerator.nextInt(sauceChoices.length)];
-  System.out.println("Your sauce is " + this.sauce);
-}
-/*  String chooseMeats(){
-    Random randomGenerator = new Random();
-    numberOfMeats = new int[randomGenerator.nextInt(8) + 1];
-    for (i=0; i<= numberOfMeats; i++){
-      myPizza.meats =
+  public void chooseSauce(){
+    this.sauce = sauceChoices[randomGenerator.nextInt(sauceChoices.length)];
+    System.out.println("Your sauce is " + this.sauce);
+  }
+
+  public void chooseMeats(){
+    int numberOfMeats = this.meats.length;
+    for (int i=0; i<numberOfMeats; i++){
+      this.meats[i] = meatChoices[randomGenerator.nextInt(8)];
+      System.out.println("Meat " + (i + 1) + " is " + meats[i]);
     }
   }
-  String chooseVeggies(){
-    Random randomGenerator = new Random();
+
+  public void chooseVeggies(){
+    int numberOfVeggies = this.veggies.length;
+    for (int i=0; i<numberOfVeggies; i++){
+      this.veggies[i] = veggieChoices[randomGenerator.nextInt(9)];
+      System.out.println("veggie " + (i + 1) + " is " + veggies[i]);
+    }
   }
-*/
 }
+
+
+
+
+
+
+
+
+
