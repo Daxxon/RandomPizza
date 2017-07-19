@@ -1,3 +1,3 @@
-enum SauceChoices = {
+enum SauceChoices {
   marinara, crushedTomato, garlicParmesan, barbeque, buffalo
 }

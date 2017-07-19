@@ -11,7 +11,7 @@ public class Pizza {
   public void setSauce(int i){
     this.sauce = SauceChoices.values(i);
   }
-  public setNumberOfMeats(int numberOfMeats){
+  public int setNumberOfMeats(int numberOfMeats){
     return numberOfMeats;
   }
   public void setMeats() {
@@ -19,12 +19,12 @@ public class Pizza {
       this.meats[i] = meatChoices[randomGenerator.nextInt(8)];
     }
   }
-  public Integer setNumberOfVeggies(int numberOfVeggies){
+  public int setNumberOfVeggies(int numberOfVeggies){
     return numberOfVeggies;
   }
   public void setVeggies(int[] veggies) {
     for (int i = 0; i < myNumberOfVeggies; i++) {
-      this.veggies[i] = veggieChoices[];
+      this.veggies[i] = veggieChoices[randomGenerator.nextInt(10)];
     }
   }
   public String getCrust(){

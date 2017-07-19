@@ -1,3 +1,3 @@
-enum CrustChoices = {
+enum CrustChoices {
   originalPan, handTossed, thin, stuffed
 }
